@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  title: A minimal OpenAPI Description
+  version: 0.1.0
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    $ref: "./schemas/index.yaml"
+paths: 
+  /book_details:
+    $ref: "./path/book_details.yaml"
+  /display_all_books:
+    $ref: "./path/display_all_books.yaml"
+  /student_details:
+    $ref: "./path/student_details.yaml"
+  /display_all_students:
+    $ref: "./path/display_all_students.yaml"
+  /issue_book_details:
+    $ref: "./path/issue_book_details.yaml"
+  /return_book_details:
+    $ref: "./path/return_book_details.yaml"

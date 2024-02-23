@@ -1,0 +1,28 @@
+post:
+  summary: Add the issue book details 
+  operationId: issueBookDetails
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/issue_book_schema/issue_book_schema.yaml"
+  responses:
+    "201":
+      description: Issued book details have added successfully
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "409":
+      description: This details of the book already exists
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"

@@ -1,0 +1,29 @@
+put:
+  summary: Update the return book details and calculate the fine amount
+  operationId: returnBookDetail
+  parameters:
+    -in: path
+    name: bookId
+    required: true
+    description: The ID of the book to update.
+    schema:
+      type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/issue_book_schema/issue_book_schema.yaml" 
+  responses:
+    "200":
+      description: Details of the specific book has updated
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified book is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"

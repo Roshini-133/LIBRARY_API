@@ -1,0 +1,13 @@
+type: object
+required:
+ -rollNo
+ -name
+ -department
+properties:
+  rollNo:
+   type: number
+  name:
+   type: string
+  department:
+   type: string
+  

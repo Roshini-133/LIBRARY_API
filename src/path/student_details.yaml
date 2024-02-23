@@ -1,0 +1,103 @@
+post:
+  summary: Add the student details 
+  operationId: addStudentDetails
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/student_schemas/student_details_schema.yaml"
+  responses:
+    "201":
+      description: Student details have added successfully
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "409":
+      description: The detail of the student already exists
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+get:
+  summary: Retrieve the student details based on ID
+  operationId: getSpecificStudentDetail
+  parameters:
+    -in: path
+    name: rollNo
+    required: true
+    description: The ID of the student to retrieve.
+    schema:
+      type: integer
+  responses:
+    "200":
+      description: Details of the specific student has displayed
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified student's detail is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+put:
+  summary: Update the student details based on ID
+  operationId: updateSpecificstudentDetail
+  parameters:
+    -in: path
+    name: rollNo
+    required: true
+    description: The ID of the student to update.
+    schema:
+      type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/student_schemas/specific_student_details_schema.yaml" 
+  responses:
+    "200":
+      description: Details of the specific student has updated
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified student is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+delete:
+  summary: Delete the student details based on ID
+  operationId: deleteSpecificstudentDetail
+  parameters:
+    -in: path
+    name: rollNo
+    required: true
+    description: The ID of the student to delete.
+    schema:
+      type: integer
+  responses:
+    "204":
+      description: Details of the specific stduent has been deleted
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified stduent's detail is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"

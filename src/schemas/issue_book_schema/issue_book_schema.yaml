@@ -1,0 +1,13 @@
+type: object
+required:
+ -bookId
+ -rollNo
+ -issueDate
+properties:
+  bookId:
+   type: number
+  rollNo:
+   type: number
+  issueDate:
+   type: date
+  

@@ -1,0 +1,14 @@
+BookDetails:
+ $ref: "./book_schemas/book_details_schema.yaml"
+ResponseMessage:
+ $ref: "./common/response_message.yaml"
+ErrorMessage:
+ $ref: "./common/error_message.yaml"
+SpecificBookDetails:
+ $ref: "./book_schemas/specific_book_details_schema.yaml"
+StudentDetails:
+ $ref: "./student_schemas/student_details_schema.yaml"
+SpecificStudentDetails:
+ $ref: "./student_schemas/specific_student_details_schema.yaml"
+IssueBookDetails:
+ $ref: "./issue_book_schema/issue_book_schema.yaml"
