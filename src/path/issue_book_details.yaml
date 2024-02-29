@@ -1,6 +1,6 @@
 post:
   summary: Add the issue book details 
-  operationId: issueBookDetails
+  operationId: issued
   requestBody:
     required: true
     content:
@@ -20,8 +20,8 @@ post:
        application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
-    "409":
-      description: This details of the book already exists
+    "404":
+      description: This details of the book does not exists
       content:
         application/json:
           schema:

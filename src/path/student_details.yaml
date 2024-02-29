@@ -42,11 +42,17 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../schemas/common/response_message.yaml"
+            $ref: "../schemas/student_schemas/specific_student_details_schema.yaml"
     "404":
       description: The specified student's detail is not available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
 put:
@@ -78,6 +84,12 @@ put:
         application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
 delete:
   summary: Delete the student details based on ID
   operationId: deleteSpecificstudentDetail
@@ -99,5 +111,11 @@ delete:
       description: The specified stduent's detail is not available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"

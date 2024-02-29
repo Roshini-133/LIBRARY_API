@@ -7,10 +7,16 @@ get:
       content:
         application/json:
           schema:
-            $ref: "../schemas/common/response_message.yaml"
+            $ref: "../schemas/book_schemas/book_details_schema.yaml"
     "404":
       description: There is no book available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"

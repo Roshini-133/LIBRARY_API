@@ -3,6 +3,7 @@ required:
  -bookId
  -rollNo
  -issueDate
+ -rentalDays
 properties:
   bookId:
    type: number
@@ -10,4 +11,6 @@ properties:
    type: number
   issueDate:
    type: date
+  rentalDays:
+   type: number
   

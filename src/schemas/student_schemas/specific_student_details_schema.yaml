@@ -2,8 +2,6 @@ type: object
 required:
  -rollNo
 properties:
-  rollNo:
-   type: number
   name:
    type: string
   department:

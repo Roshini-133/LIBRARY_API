@@ -1,12 +1,18 @@
 put:
-  summary: Update the return book details and calculate the fine amount
+  summary: The book will be returned and the quantity of the returned book will be increased
   operationId: returnBookDetail
   parameters:
-    -in: path
-    name: bookId
-    required: true
-    description: The ID of the book to update.
-    schema:
+   - in: path
+     name: rollNo
+     required: true
+     description: The roll number of the specific student.
+     schema:
+      type: integer
+   - in: path
+     name: bookId
+     required: true
+     description: The book ID of the specific book .
+     schema:
       type: integer
   requestBody:
     required: true
@@ -16,7 +22,7 @@ put:
           $ref: "../schemas/issue_book_schema/issue_book_schema.yaml" 
   responses:
     "200":
-      description: Details of the specific book has updated
+      description: the quantity of the specific book has been updated
       content:
         application/json:
           schema:
@@ -25,5 +31,11 @@ put:
       description: The specified book is not available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"

@@ -2,8 +2,11 @@ type: object
 required:
   -message
   -statusCode
+  -error
 properties:
  message:
   type: string
  statusCode:
   type: number
+ error: 
+  type: string

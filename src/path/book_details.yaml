@@ -38,15 +38,21 @@ get:
       type: integer
   responses:
     "200":
-      description: Details of the specific book has displayed
+      description: Details of the specific book has been displayed
       content:
         application/json:
           schema:
-            $ref: "../schemas/common/response_message.yaml"
+            $ref: "../schemas/book_schemas/specific_book_details_schema.yaml"
     "404":
       description: The specified book is not available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
 put:
@@ -78,6 +84,12 @@ put:
         application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
 delete:
   summary: Delete the book details based on ID
   operationId: deleteSpecificBookDetail
@@ -99,5 +111,11 @@ delete:
       description: The specified book is not available in the server
       content:
         application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
           schema:
             $ref: "../schemas/common/error_message.yaml"
