@@ -13,13 +13,13 @@ components:
 paths: 
   /book_details:
     $ref: "./path/book_details.yaml"
-  /display_all_books:
-    $ref: "./path/display_all_books.yaml"
+  /display_specific_book_detail/{bookId}:
+    $ref: "./path/display_specific_book_detail.yaml"
   /student_details:
     $ref: "./path/student_details.yaml"
-  /display_all_students:
-    $ref: "./path/display_all_students.yaml"
+  /display_specific_student_detail/{rollNo}:
+    $ref: "./path/display_specific_student_detail.yaml"
   /issue_book_details:
     $ref: "./path/issue_book_details.yaml"
-  /return_book_details:
+  /return_book_details/{rollNo}/{bookId}:
     $ref: "./path/return_book_details.yaml"
