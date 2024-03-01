@@ -1,0 +1,30 @@
+{
+  "name": "library_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "swagger-cli bundle ./src/spec.yaml --outfile ./dist/spec.yaml --type yaml && node --loader ts-node/esm scripts/generate.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Roshini-133/LIBRARY_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Roshini-133/LIBRARY_API/issues"
+  },
+  "homepage": "https://github.com/Roshini-133/LIBRARY_API#readme",
+  "dependencies": {
+    "swagger-cli": "^4.0.4"
+  },
+  "devDependencies": {
+    "@ts-morph/bootstrap": "^0.11.1",
+    "@types/js-yaml": "^4.0.4",
+    "js-yaml": "^4.1.0",
+    "openapi-typescript": "^4.4.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  }
+}

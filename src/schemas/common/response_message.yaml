@@ -1,0 +1,11 @@
+type: object
+required:
+  -statuscode
+  -message
+properties:
+  statuscode:
+    type: number
+  message:
+    type: string
+
+ 

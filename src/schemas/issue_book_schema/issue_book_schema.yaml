@@ -1,0 +1,16 @@
+type: object
+required:
+ -bookId
+ -rollNo
+ -issueDate
+ -rentalDays
+properties:
+  bookId:
+   type: number
+  rollNo:
+   type: number
+  issueDate:
+   type: date
+  rentalDays:
+   type: number
+  

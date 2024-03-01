@@ -1,0 +1,9 @@
+type: object
+required:
+ -rollNo
+properties:
+  name:
+   type: string
+  department:
+   type: string
+  

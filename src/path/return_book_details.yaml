@@ -1,0 +1,41 @@
+put:
+  summary: The book will be returned and the quantity of the returned book will be increased
+  operationId: returnBookDetail
+  parameters:
+   - in: path
+     name: rollNo
+     required: true
+     description: The roll number of the specific student.
+     schema:
+      type: integer
+   - in: path
+     name: bookId
+     required: true
+     description: The book ID of the specific book .
+     schema:
+      type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/issue_book_schema/issue_book_schema.yaml" 
+  responses:
+    "200":
+      description: the quantity of the specific book has been updated
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified book is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"

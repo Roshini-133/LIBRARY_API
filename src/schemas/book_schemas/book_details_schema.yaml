@@ -1,0 +1,15 @@
+type: object
+required:
+ -bookId
+ -bookName
+ -author
+ -quantity
+properties:
+  bookId:
+   type: number
+  bookName:
+   type: string
+  author:
+   type: string
+  quantity:
+   type: number

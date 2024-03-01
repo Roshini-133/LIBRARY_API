@@ -1,0 +1,22 @@
+get:
+  summary: Retrieve all the student details
+  operationId: getAllStudents
+  responses:
+    "200":  
+      description: List of all the available stduents
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/student_schemas/student_details_schema.yaml"
+    "404":
+      description: There is no student available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"

@@ -1,0 +1,114 @@
+post:
+  summary: Add the book details 
+  operationId: addBookDetails
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/book_schemas/book_details_schema.yaml"
+  responses:
+    "201":
+      description: Book details have added successfully
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "409":
+      description: This details of the book already exists
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+get:
+  summary: Retrieve all the book details
+  operationId: getAllBooks
+  responses:
+    "200":  
+      description: List of all the available books
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/book_schemas/book_details_schema.yaml"
+    "404":
+      description: There is no book available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+put:
+  summary: Update the book details based on ID
+  operationId: updateSpecificBookDetail
+  parameters:
+    -in: path
+    name: bookId
+    required: true
+    description: The ID of the book to update.
+    schema:
+      type: integer
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: "../schemas/book_schemas/specific_book_details_schema.yaml" 
+  responses:
+    "200":
+      description: Details of the specific book has updated
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified book is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+delete:
+  summary: Delete the book details based on ID
+  operationId: deleteSpecificBookDetail
+  parameters:
+    -in: path
+    name: bookId
+    required: true
+    description: The ID of the book to delete.
+    schema:
+      type: integer
+  responses:
+    "204":
+      description: Details of the specific book has been deleted
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/response_message.yaml"
+    "404":
+      description: The specified book is not available in the server
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
+    "500":
+      description: Internal server error
+      content:
+       application/json:
+          schema:
+            $ref: "../schemas/common/error_message.yaml"
